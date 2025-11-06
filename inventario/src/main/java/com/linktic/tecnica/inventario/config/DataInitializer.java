@@ -1,11 +1,12 @@
 package com.linktic.tecnica.inventario.config;
 
-import com.linktic.tecnica.inventario.dto.InventarioRequest;
-import com.linktic.tecnica.inventario.model.Inventario;
-import com.linktic.tecnica.inventario.repository.InventarioRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import com.linktic.tecnica.inventario.model.Inventario;
+import com.linktic.tecnica.inventario.repository.InventarioRepository;
+
+import lombok.RequiredArgsConstructor;
 
 @Component
 @RequiredArgsConstructor
@@ -23,16 +24,16 @@ public class DataInitializer implements CommandLineRunner {
                     .cantidad(50)
                     .ubicacion("Almacén A")
                     .build();
-            
+
             inventarioRepository.save(inventarioLaptop);
-            
+
             // Crear inventario para el producto 2 (Smartphone Samsung Galaxy S23)
             Inventario inventarioPhone = Inventario.builder()
                     .productoId(2L)
                     .cantidad(100)
                     .ubicacion("Almacén B")
                     .build();
-            
+
             inventarioRepository.save(inventarioPhone);
         }
     }
